@@ -3,7 +3,7 @@ describe('React Redux Tweets', () => {
     // Test App Load and DOM Elements
 
     it('Loads the App', () => {
-        cy.visit('http://localhost:8080');
+        cy.visit('http://localhost:3000');
     });
 
     it('Should have a header', () => {
@@ -11,47 +11,52 @@ describe('React Redux Tweets', () => {
             .should('have.text', 'REACT REDUX TWITTER API APP');
     });
 
-    it('Should show the get Top Tweets button', () => {
+    it('Should show the Search Users button', () => {
         cy.get('button')
-            .should('have.text', 'Get Top Tweets');
+            .should('have.text', 'Search');
     });
 
-    it('displays list of Twitter user names to fetch from API', () => {
-        cy.get('p')
-            .should('have.length', 6);
-    });
 
     // Test Actions
 
-    it('Test SELECT_USER action', () => {
-        // dispatch Redux action
-        cy
-            .window()
-            .its('store')
-            .invoke('dispatch', { type: 'ADD_USER', text: 'Test Select User Action' })
-        // check if the app has updated its UI
-        // cy.get('.user-button p').should('have.length', 6).contains('Test Select User Action')
-    })
+    it('has expected state on load', () => {
+        cy.window().its('store').invoke('getState').should('deep.equal', {
+          todos: [
+            {
+              completed: false,
+              id: 0,
+              text: 'Use Redux',
+            },
+          ],
+          visibilityFilter: 'show_all',
+        })
+      });
 
-    it('Test REQUEST_TWEETS action', () => {
-        // dispatch Redux action
-        cy
-            .window()
-            .its('store')
-            .invoke('dispatch', { type: 'REQUEST_TWEETS', text: 'Test Receive Tweets Action' })
-        // check if the app has updated its UI
-        // cy.get('.user-button p').should('have.length', 6).contains('Test Receive Tweets Action')
-    })
 
-    it('Test RECEIVE_TWEETS action', () => {
+
+    it('Test SEARCH_USERS action', () => {
         // dispatch Redux action
         cy
             .window()
             .its('store')
-            .invoke('dispatch', { type: 'RECEIVE_TWEETS', text: 'Test Receive Tweets Action' })
-        // check if the app has updated its UI
-        // cy.get('.user-button p').should('have.length', 6).contains('Test Receive Tweets Action')
-    })
+            .invoke('dispatch', { type: 'SEARCH_USERS', text: 'Test Search Users Action' })
+    });
+
+    it('Test FETCH_USERS action', () => {
+        // dispatch Redux action
+        cy
+            .window()
+            .its('store')
+            .invoke('dispatch', { type: 'FETCH_USERS', text: 'Test Fetch Users Action' })
+    });
+
+    it('Test LOADING action', () => {
+        // dispatch Redux action
+        cy
+            .window()
+            .its('store')
+            .invoke('dispatch', { type: 'LOADING', text: 'Test Loading Action' })
+    });
 
 });
 
