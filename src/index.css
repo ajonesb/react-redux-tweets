@@ -9,14 +9,27 @@ html, body {
 	background-color: #053E8B;
 	color: #ffffff;
 	height: 100%;
-	/* background: url('../assets/twitter-wallpaper.jpg') no-repeat fixed top left;
-	background-size: cover; */
+	background: url('./assets/twitter-wallpaper.jpg') no-repeat fixed top left;
+	background-size: cover;
   }
 
 img {
 	width: 100%;
 }
 .loading-indicator {
+	margin-top: 50px;
+}
+
+.header-logo {
+	width: 80px;
+	height: 62px;
+}
+
+.search-form-wrap {
+	margin-top: 190px;
+}
+
+.search-button {
 	margin-top: 20px;
 }
 
@@ -138,10 +151,21 @@ input {
 	text-align: center;
 }
 
+.form-control {
+	width: 51%;
+	margin: auto;
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {
 	.btn-block {
 		width: 75%;	
 	}
+
+	.form-control {
+		width: 100%;
+		margin: auto;
+	}
+
 }

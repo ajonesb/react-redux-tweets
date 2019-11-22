@@ -23,6 +23,6 @@ Testing is done via Cypress - - https://docs.cypress.io/
 - npm install --save cypress
 
 run Cypress: 
-- npm run test:cypress
+- npx cypress open
 
 Perform e2e testing on App.e2e.js, example recipes for other testing in examples folder.
