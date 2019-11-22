@@ -5,10 +5,11 @@ export const RECEIVE_TWEETS = 'RECEIVE_TWEETS';
 // Test on Postman to fetch api: 
 // https://www.dataneb.com/post/how-to-make-calls-to-twitter-apis-using-postman-client
 
-const MY_CONSUMER_KEY = 'QYOgHZjV4IrNGSA6nTQO6DVHq';
-const MY_CONSUMER_SECRET = '5OpOALje8EYvRfxXaTOL1k204ip42WN7GKkmVFw2jG51bApVQC';
-const MY_CONSUMER_TOKEN_KEY = '1195252928090521600-UCE9hzSTfmhFYtGlcns7ddxWRCsR5t';
-const MY_CONSUMER_TOKEN_SECRET = 'MINA4QGBEjtGKTo0IaY5pRDSLko4cGCzMugkir2QJy1Jb';
+// Add API Keys created on Twitter App - https://developer.twitter.com/en/apps
+const MY_CONSUMER_KEY = '';
+const MY_CONSUMER_SECRET = '';
+const MY_CONSUMER_TOKEN_KEY = '';
+const MY_CONSUMER_TOKEN_SECRET = '';
 
 
 export const getUser = user => ({
