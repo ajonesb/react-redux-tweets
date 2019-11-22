@@ -6,7 +6,7 @@ React Redux application to show tweets for different users
 
 - npm install
 - npm start
-open http://localhost:8080  (should start automatically )
+open http://localhost:3000  (should start automatically )
 
 
 ### Available Commands
